@@ -1,10 +1,25 @@
 # Performance Measure
 
-This document has the purpose to explan how to use the component performance measurement strategy. This is a small API based on Firebase Perform library.
+This is a small API based on Firebase Perform library.
 
+## Install
+```bash
+npm install react-native-firebase-perf-tracer
+// or
+yarn add react-native-firebase-perf-tracer
+```
 
+## Dependencies
+- `react-native` 0.61 or above
+- `@react-native-firebase/perf` 6.3.4 or above
+```bash
+// Install dependencies
+npm install @react-native-firebase/perf
+// or
+yarn add @react-native-firebase/perf
+```
 
-## Higher-Order Component
+## How to use it?
 
 The most complete/automatic implementation can be easily get by the use of the it's Higher-Order Component.
 Here is a sample on how to use the [Higher-Order Component](https://reactjs.org/docs/higher-order-components.html) on your components:
@@ -255,3 +270,14 @@ abstract class PerformanceMeasureSessionType {
 	incrementMetric(metricName: string, incrementBy: number): void;
 }
 ```
+
+# License
+- [MIT](./LICENSE.txt)
+
+# Contributing
+Contributions are very welcome!
+- [Code of Conduct](./CODE_OF_CONDUCT.txt)
+- [Contributing Guide](./CONTRIBUTING.txt)
+
+# From Developers
+Made with ❤️ by [Zenklub](zenklub.com.br) developer team.
