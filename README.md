@@ -272,7 +272,7 @@ abstract class PerformanceMeasureSessionType {
 ```
 
 # License
-- [MIT](./LICENSE.txt)
+- [MIT](./LICENSE)
 
 # Contributing
 Contributions are very welcome!
