@@ -1,0 +1,72 @@
+{
+  "name": "react-native-firebase-perf-tracer",
+  "version": "0.1.0",
+  "description": "React Native Component Performance Tracer based on Firebase Performance",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Erick Martins",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "lint": "tslint -c ./tslint.json ./src/**/*.{ts,tsx}",
+    "lint:fix": "tslint -c ./tslint.json ./src/**/*.{ts,tsx} --fix",
+    "test": "jest",
+    "build": "yarn lint && tsc",
+    "prepare": "npm run build",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "@react-native-firebase/app": "^6.3.4",
+    "@react-native-firebase/perf": "^6.3.4",
+    "react": "^16.13.0",
+    "react-native": "^0.61.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-decorators": "^7.6.2",
+    "@eva-design/eva": "^2.0.0",
+    "@eva-design/material": "^2.0.0",
+    "@react-native-firebase/perf": "^7.1.6",
+    "@types/gulp": "ts3.8",
+    "@types/gulp-replace": "ts3.8",
+    "@types/jest": "ts3.8",
+    "@types/lodash.merge": "ts3.8",
+    "@types/react-native": "ts3.8",
+    "@types/react-test-renderer": "ts3.8",
+    "@types/rimraf": "ts3.8",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "change-case": "^3.1.0",
+    "conventional-changelog-cli": "^2.0.21",
+    "coveralls": "^3.0.2",
+    "doc-prsr": "^2.2.4",
+    "gulp": "^4.0.2",
+    "gulp-typedoc": "^2.2.3",
+    "husky": "^1.1.2",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react": "~16.9.0",
+    "react-native": "~0.61.4",
+    "react-native-svg": "~9.13.6",
+    "react-native-testing-library": "^1.12.0",
+    "react-test-renderer": "16.9.0",
+    "rimraf": "^2.6.2",
+    "ts-node": "^3.2.2",
+    "tscpaths": "0.0.9",
+    "tslint": "^5.12.1",
+    "typedoc": "^0.15.3",
+    "typescript": "^3.8.2"
+  },
+  "resolutions": {
+    "react": "~16.9.0",
+    "react-native": "~0.61.5",
+    "@react-native-firebase/perf": "~6.3.4"
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
+  }
+}
