@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProfilerPerformanceAttributesKeys, ProfilerPerformanceMetricsKeys } from './constants';
-import { isGlobalEnabled } from './helpers';
+import { PerformanceHelper } from './helpers';
 import { MockedPerformanceMeasureHookType, MockedPerformanceMeasureSession } from './mockers';
 import { usePerformanceMeasure } from './performance-measure-hook';
 import { PerformanceMeasureSession } from './performance-measure-session';
@@ -96,7 +96,7 @@ export const withPerformanceMeasure = <P extends object>(
   };
 
   React.useEffect(() => {
-    if (isGlobalEnabled()) {
+    if (PerformanceHelper.isGlobalEnabled()) {
       setEnabled(true);
       startProfilerTracing();
     } else {

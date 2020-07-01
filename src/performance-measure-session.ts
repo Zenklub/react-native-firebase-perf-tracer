@@ -1,6 +1,6 @@
 import perf, { FirebasePerformanceTypes } from '@react-native-firebase/perf';
 import { PerformanceMeasureConstants } from './constants';
-import { sanitizeName, setGlobalDisabled, setGlobalEnabled } from './helpers';
+import { PerformanceHelper } from './helpers';
 import { PerformanceMeasureSessionType } from './types.d';
 
 
@@ -9,10 +9,12 @@ export class PerformanceMeasureSession
   private identifier: string;
   private trace?: FirebasePerformanceTypes.Trace | null;
   private traceStartedAt?: Date | null;
-  static mockAllSessions: (mocked: boolean) => void;
+
+  static setGlobalEnabled: () => void;
+  static setGlobalDisabled: () => void;
 
   constructor(identifier: string) {
-    this.identifier = sanitizeName(
+    this.identifier = PerformanceHelper.sanitizeName(
       identifier,
       PerformanceMeasureConstants.MaxTraceNameLength,
     );
@@ -27,7 +29,7 @@ export class PerformanceMeasureSession
     );
 
   putAttribute = (attributeName: string, value: string) => {
-    const name = sanitizeName(
+    const name = PerformanceHelper.sanitizeName(
       attributeName,
       PerformanceMeasureConstants.MaxAttributeKeyLength,
     );
@@ -42,7 +44,7 @@ export class PerformanceMeasureSession
   };
 
   incrementMetric = (metricName: string, incrementBy: number) => {
-    const name = sanitizeName(
+    const name = PerformanceHelper.sanitizeName(
       metricName,
       PerformanceMeasureConstants.MaxAttributeKeyLength,
     );
@@ -90,10 +92,5 @@ export class PerformanceMeasureSession
   };
 }
 
-PerformanceMeasureSession.mockAllSessions = (mocked) => {
-  if (mocked) {
-    setGlobalDisabled();
-  } else {
-    setGlobalEnabled();
-  }
-};
+PerformanceMeasureSession.setGlobalEnabled = PerformanceHelper.setGlobalEnabled;
+PerformanceMeasureSession.setGlobalDisabled = PerformanceHelper.setGlobalDisabled;

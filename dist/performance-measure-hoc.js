@@ -67,7 +67,7 @@ exports.withPerformanceMeasure = (WrappedComponent, identifier) => (props) => {
         }
     };
     react_1.default.useEffect(() => {
-        if (helpers_1.isGlobalEnabled()) {
+        if (helpers_1.PerformanceHelper.isGlobalEnabled()) {
             setEnabled(true);
             startProfilerTracing();
         }

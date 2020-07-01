@@ -2,7 +2,6 @@ import React from 'react';
 import { PerformanceMeasureSession } from './performance-measure-session';
 import { PerformanceMeasureHookType, PerformanceMeasureSessionType } from './types';
 
-
 export const usePerformanceMeasure = (
   identifier: string,
 ): PerformanceMeasureHookType => {

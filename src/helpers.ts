@@ -1,30 +1,33 @@
 import { PerformanceMeasureConstants } from './constants';
 
-let disabled = true;
+class Helper {
+  enabled: boolean = true;
 
-const toSnakeCase = (str: string): string =>
-  str
-    .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
-    .replace(/^_/, '');
+  toSnakeCase = (str: string): string =>
+    str
+      .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
+      .replace(/^_/, '');
+  sanitizeName = (
+    name: string,
+    limit: PerformanceMeasureConstants,
+  ): string => {
+    return this.toSnakeCase(name)
+      .replace(/^\s+|\s+$/g, '')
+      .replace(/\s/, '_')
+      .substring(0, limit);
+  };
 
-export const sanitizeName = (
-  name: string,
-  limit: PerformanceMeasureConstants,
-): string => {
-  return toSnakeCase(name)
-    .replace(/^\s+|\s+$/g, '')
-    .replace(/\s/, '_')
-    .substring(0, limit);
-};
+  setGlobalDisabled = () => {
+    this.enabled = false;
+  };
 
-export const setGlobalDisabled = () => {
-  disabled = true;
-};
+  setGlobalEnabled = () => {
+    this.enabled = true;
+  };
 
-export const setGlobalEnabled = () => {
-  disabled = false;
-};
+  isGlobalEnabled = (): boolean => {
+    return this.enabled;
+  };
+}
 
-export const isGlobalEnabled = (): boolean => {
-  return disabled;
-};
+export const PerformanceHelper = new Helper();

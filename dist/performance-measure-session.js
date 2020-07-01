@@ -11,13 +11,13 @@ class PerformanceMeasureSession {
     constructor(identifier) {
         this.log = (message) => console.log(`%cPerformance Measure:%c ${this.identifier}`, 'background: #5500FF; color: #FFF; padding: 2px', 'color: #bada55', message);
         this.putAttribute = (attributeName, value) => {
-            const name = helpers_1.sanitizeName(attributeName, constants_1.PerformanceMeasureConstants.MaxAttributeKeyLength);
+            const name = helpers_1.PerformanceHelper.sanitizeName(attributeName, constants_1.PerformanceMeasureConstants.MaxAttributeKeyLength);
             const trimmedValue = value.substring(0, constants_1.PerformanceMeasureConstants.MaxAttributeValueLength);
             this.trace?.putAttribute(name, trimmedValue);
             this.log(`Put Attribute: ${name} = ${trimmedValue}`);
         };
         this.incrementMetric = (metricName, incrementBy) => {
-            const name = helpers_1.sanitizeName(metricName, constants_1.PerformanceMeasureConstants.MaxAttributeKeyLength);
+            const name = helpers_1.PerformanceHelper.sanitizeName(metricName, constants_1.PerformanceMeasureConstants.MaxAttributeKeyLength);
             this.trace?.incrementMetric(name, incrementBy);
             const metricNow = this.trace?.getMetric(metricName);
             const was = (metricNow || 0) - incrementBy;
@@ -52,16 +52,10 @@ class PerformanceMeasureSession {
             stopLoading();
             return result;
         };
-        this.identifier = helpers_1.sanitizeName(identifier, constants_1.PerformanceMeasureConstants.MaxTraceNameLength);
+        this.identifier = helpers_1.PerformanceHelper.sanitizeName(identifier, constants_1.PerformanceMeasureConstants.MaxTraceNameLength);
     }
 }
 exports.PerformanceMeasureSession = PerformanceMeasureSession;
-PerformanceMeasureSession.mockAllSessions = (mocked) => {
-    if (mocked) {
-        helpers_1.setGlobalDisabled();
-    }
-    else {
-        helpers_1.setGlobalEnabled();
-    }
-};
+PerformanceMeasureSession.setGlobalEnabled = helpers_1.PerformanceHelper.setGlobalEnabled;
+PerformanceMeasureSession.setGlobalDisabled = helpers_1.PerformanceHelper.setGlobalDisabled;
 //# sourceMappingURL=performance-measure-session.js.map

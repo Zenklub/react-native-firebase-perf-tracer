@@ -3,7 +3,8 @@ export declare class PerformanceMeasureSession implements PerformanceMeasureSess
     private identifier;
     private trace?;
     private traceStartedAt?;
-    static mockAllSessions: (mocked: boolean) => void;
+    static setGlobalEnabled: () => void;
+    static setGlobalDisabled: () => void;
     constructor(identifier: string);
     private log;
     putAttribute: (attributeName: string, value: string) => void;
