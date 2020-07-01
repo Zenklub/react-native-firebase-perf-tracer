@@ -1,8 +1,7 @@
 
 module.exports = {
   preset: 'react-native',
-  cacheDirectory: '<rootDir>/dist/jest/cache',
-  coverageDirectory: '<rootDir>/dist/jest/coverage',
+  coverageDirectory: '<rootDir>/coverage',
   globals: {
     __TEST__: true,
   },

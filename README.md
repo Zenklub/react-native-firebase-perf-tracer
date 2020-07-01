@@ -4,7 +4,7 @@ This is a small API based on Firebase Perform library.
 
 ## Install
 ```bash
-npm install react-native-firebase-perf-tracer
+npm install --save react-native-firebase-perf-tracer
 // or
 yarn add react-native-firebase-perf-tracer
 ```
@@ -14,7 +14,7 @@ yarn add react-native-firebase-perf-tracer
 - `@react-native-firebase/perf` 6.3.4 or above
 ```bash
 // Install dependencies
-npm install @react-native-firebase/perf
+npm install --save  @react-native-firebase/perf
 // or
 yarn add @react-native-firebase/perf
 ```
