@@ -3,10 +3,15 @@ import { PerformanceMeasureConstants } from './constants';
 class Helper {
   enabled: boolean = true;
 
-  toSnakeCase = (str: string): string =>
-    str
+   toSnakeCase = (str: string): string => {
+    let string = str
       .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
       .replace(/^_/, '');
+    if(string.match(/__/g)) {
+      return string.split('__').map(it => it.replace(/_/g, "")).join('_')
+    }
+    return string;
+  };
   sanitizeName = (
     name: string,
     limit: PerformanceMeasureConstants,
