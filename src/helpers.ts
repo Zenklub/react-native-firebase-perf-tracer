@@ -4,11 +4,11 @@ class Helper {
   enabled: boolean = true;
 
    toSnakeCase = (str: string): string => {
-    let string = str
+    const string = str
       .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
       .replace(/^_/, '');
-    if(string.match(/__/g)) {
-      return string.split('__').map(it => it.replace(/_/g, "")).join('_')
+    if (string.match(/__/g)) {
+      return string.split('__').map(it => it.replace(/_/g, '')).join('_');
     }
     return string;
   };
