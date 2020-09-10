@@ -17,7 +17,7 @@
     "lint": "tslint -c ./tslint.json ./src/**/*.{ts,tsx}",
     "lint:fix": "tslint -c ./tslint.json ./src/**/*.{ts,tsx} --fix",
     "test": "jest",
-    "build": "yarn lint && tsc",
+    "build": "npm run lint && tsc",
     "prepare": "npm run build",
     "prepublish": "npm run build"
   },
