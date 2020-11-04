@@ -1,0 +1,7 @@
+{
+	"extends": ["@zenklub/eslint-config-react"],
+	"parser": "@typescript-eslint/parser",
+	"rules": {
+		"@typescript-eslint/no-empty-function": 0
+	}
+}

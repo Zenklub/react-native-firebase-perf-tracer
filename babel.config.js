@@ -3,12 +3,12 @@ module.exports = function (api) {
 
 	const isProduction =
 		process.env.NODE_ENV === 'production' ||
-    process.env.BABEL_ENV === 'production';
+		process.env.BABEL_ENV === 'production';
 
-  const isTest = process.env.NODE_ENV === 'test'
+	const isTest = process.env.NODE_ENV === 'test';
 
 	let presets = ['module:metro-react-native-babel-preset'];
-  let plugins = [];
+	let plugins = [];
 
 	if (isProduction || isTest) {
 		plugins.push('transform-remove-console');
@@ -16,6 +16,6 @@ module.exports = function (api) {
 
 	return {
 		presets,
-    plugins
+		plugins,
 	};
 };
