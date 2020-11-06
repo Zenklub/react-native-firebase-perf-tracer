@@ -1,4 +1,5 @@
 import { PerformanceMeasureSession } from './performance-measure-session';
+import { PerformanceMeasureHookType } from './types';
 
 export class MockedPerformanceMeasureSession extends PerformanceMeasureSession {
 	constructor() {
