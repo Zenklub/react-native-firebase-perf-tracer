@@ -1,71 +1,80 @@
 {
-  "name": "react-native-firebase-perf-tracer",
-  "version": "0.1.0",
-  "description": "React Native Component Performance Tracer based on Firebase Performance",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "typings": "dist/index.d.ts",
-  "license": "MIT",
-  "author": "zenklub <@zenklub.com.br>",
-  "homepage": "https://github.com/erick-martins/react-native-firebase-perf-tracer#readme",
-  "repository": "git+https://github.com/erick-martins/react-native-firebase-perf-tracer.git",
-  "bugs": {
-    "url": "https://github.com/erick-martins/react-native-firebase-perf-tracer/issues"
-  },
-  "scripts": {
-    "clean": "rimraf ./dist",
-    "lint": "tslint -c ./tslint.json ./src/**/*.{ts,tsx}",
-    "lint:fix": "tslint -c ./tslint.json ./src/**/*.{ts,tsx} --fix",
-    "test": "jest",
-    "build": "npm run lint && tsc",
-    "prepare": "npm run build",
-    "prepublish": "npm run build"
-  },
-  "peerDependencies": {
-    "@react-native-firebase/app": "^6.3.4",
-    "@react-native-firebase/perf": "^6.3.4",
-    "react": "^16.13.0",
-    "react-native": "^0.61.5"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/plugin-proposal-decorators": "^7.6.2",
-    "@eva-design/eva": "^2.0.0",
-    "@eva-design/material": "^2.0.0",
-    "@react-native-firebase/perf": "^7.1.6",
-    "@types/jest": "ts3.8",
-    "@types/react-native": "ts3.8",
-    "@types/react-test-renderer": "ts3.8",
-    "@types/rimraf": "ts3.8",
-    "babel-jest": "^24.9.0",
-    "babel-plugin-transform-remove-console": "^6.9.4",
-    "coveralls": "^3.0.2",
-    "husky": "^1.1.2",
-    "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.56.0",
-    "react": "~16.9.0",
-    "react-native": "~0.61.4",
-    "react-native-testing-library": "^1.12.0",
-    "react-test-renderer": "16.9.0",
-    "rimraf": "^2.6.2",
-    "ts-node": "^3.2.2",
-    "tslint": "^5.12.1",
-    "typescript": "^3.8.2"
-  },
-  "resolutions": {
-    "react": "~16.9.0",
-    "react-native": "~0.61.5",
-    "@react-native-firebase/perf": "~6.3.4"
-  },
-  "importSort": {
-    ".js, .jsx, .ts, .tsx": {
-      "style": "module",
-      "parser": "typescript"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  }
+	"name": "react-native-firebase-perf-tracer",
+	"version": "0.1.0",
+	"description": "React Native Component Performance Tracer based on Firebase Performance",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"typings": "dist/index.d.ts",
+	"license": "MIT",
+	"author": "zenklub <@zenklub.com.br>",
+	"homepage": "https://github.com/erick-martins/react-native-firebase-perf-tracer#readme",
+	"repository": "git+https://github.com/erick-martins/react-native-firebase-perf-tracer.git",
+	"bugs": {
+		"url": "https://github.com/erick-martins/react-native-firebase-perf-tracer/issues"
+	},
+	"scripts": {
+		"clean": "rimraf ./dist",
+		"lint": "prettier . --check && eslint .",
+		"lint:fix": "prettier . --write && eslint . --fix ",
+		"test": "jest",
+		"build": "npm run lint && tsc",
+		"prepare": "npm run build",
+		"prepublish": "npm run build"
+	},
+	"peerDependencies": {
+		"@react-native-firebase/app": "^6.3.4",
+		"@react-native-firebase/perf": "^6.3.4",
+		"react": "^16.13.0",
+		"react-native": "^0.61.5"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/plugin-proposal-decorators": "^7.6.2",
+		"@eva-design/eva": "^2.0.0",
+		"@eva-design/material": "^2.0.0",
+		"@react-native-firebase/perf": "^7.1.6",
+		"@types/jest": "ts3.8",
+		"@types/react-native": "ts3.8",
+		"@types/react-test-renderer": "ts3.8",
+		"@types/rimraf": "ts3.8",
+		"@typescript-eslint/eslint-plugin": "^4.6.1",
+		"@typescript-eslint/parser": "^4.6.1",
+		"@zenklub/eslint-config": "^1.0.1",
+		"@zenklub/eslint-config-react": "^0.1.1",
+		"babel-jest": "^24.9.0",
+		"babel-plugin-transform-remove-console": "^6.9.4",
+		"coveralls": "^3.0.2",
+		"eslint": "^7.12.1",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "^7.21.5",
+		"husky": "^1.1.2",
+		"import-sort-style-module": "^6.0.0",
+		"jest": "^24.9.0",
+		"metro-react-native-babel-preset": "^0.56.0",
+		"prettier": "^2.1.2",
+		"prettier-plugin-import-sort": "0.0.6",
+		"react": "~16.9.0",
+		"react-native": "~0.61.4",
+		"react-native-testing-library": "^1.12.0",
+		"react-test-renderer": "16.9.0",
+		"rimraf": "^2.6.2",
+		"ts-node": "^3.2.2",
+		"typescript": "^3.8.2"
+	},
+	"resolutions": {
+		"react": "~16.9.0",
+		"react-native": "~0.61.5",
+		"@react-native-firebase/perf": "~6.3.4"
+	},
+	"importSort": {
+		".js, .jsx, .ts, .tsx": {
+			"style": "module"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint"
+		}
+	}
 }

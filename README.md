@@ -3,6 +3,7 @@
 This is a small API based on Firebase Perform library.
 
 ## Install
+
 ```bash
 npm install --save react-native-firebase-perf-tracer
 // or
@@ -10,8 +11,10 @@ yarn add react-native-firebase-perf-tracer
 ```
 
 ## Dependencies
+
 - `react-native` 0.61 or above
 - `@react-native-firebase/perf` 6.3.4 or above
+
 ```bash
 // Install dependencies
 npm install --save  @react-native-firebase/perf
@@ -47,8 +50,6 @@ export const RawComponent = withPerformanceMeasure(
 );
 ```
 
-
-
 Now you have access to the pops created by the HOC described as:
 
 ```typescript
@@ -60,8 +61,6 @@ interface PerformanceMeasureHOCTypeProps {
 }
 ```
 
-
-
 ### Breaking it down
 
 **performance**: A performance instance of a PerformanceMeasureHookType already set to the provided identifier.
@@ -70,10 +69,8 @@ interface PerformanceMeasureHOCTypeProps {
 
 **profileTracerFail**: It finishes the profileTracerSession and set the `fail` attribute to `true`.
 
-**profileTracerSession**: An already running session named profiler, which implements `React.Profiler` to get `mount_time` among  and `updates` count,
-it is set to Firebase Perf Dashboard as `[SNAKE_CASE_OF_PROVIDED_IDENTIFIER]::profiler` it can be user to set your own attributes and metrics *(Limited to 35)*
-
-
+**profileTracerSession**: An already running session named profiler, which implements `React.Profiler` to get `mount_time` among and `updates` count,
+it is set to Firebase Perf Dashboard as `[SNAKE_CASE_OF_PROVIDED_IDENTIFIER]::profiler` it can be user to set your own attributes and metrics _(Limited to 35)_
 
 ## Performance Measure Hook
 
@@ -99,8 +96,6 @@ interface PerformanceMeasureHookType {
 }
 ```
 
-
-
 ### Breaking it down:
 
 **startTraceSession**: Creates a new trace session appending the session name as provided `[IDENTIFIER]::[SESSION_NAME]` and returns an instance of `PerformanceMeasureSession`. It is described [here](#performance-measure-session).
@@ -110,8 +105,6 @@ interface PerformanceMeasureHookType {
 **failTraceSession**: It finishes the tracer session and set the `fail` attribute to `true`.
 
 **traceMethod**: For convenience, you can use this to wrap your methods so they can be tracked automatically.
-
-
 
 **Here is example of functional component we will be using:**
 
@@ -171,8 +164,6 @@ export const RawComponentFunction = React.FC<Props>() => {
   return isReady ? renderContent() : renderLoading();
 };
 ```
-
-
 
 **Here is after the implementation diff:**
 
@@ -257,8 +248,6 @@ import { View, Text } from 'react-native';
 + }, 'raw_component_id');
 ```
 
-
-
 # Performance Measure Session
 
 ```typescript
@@ -272,12 +261,16 @@ abstract class PerformanceMeasureSessionType {
 ```
 
 # License
+
 - [MIT](./LICENSE)
 
 # Contributing
+
 Contributions are very welcome!
+
 - [Code of Conduct](./CODE_OF_CONDUCT.txt)
 - [Contributing Guide](./CONTRIBUTING.txt)
 
 # From Developers
+
 Made with ❤️ by [Zenklub](zenklub.com.br) developer team.
