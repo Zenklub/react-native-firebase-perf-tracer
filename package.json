@@ -7,10 +7,10 @@
 	"typings": "dist/index.d.ts",
 	"license": "MIT",
 	"author": "zenklub <@zenklub.com.br>",
-	"homepage": "https://github.com/erick-martins/react-native-firebase-perf-tracer#readme",
-	"repository": "git+https://github.com/erick-martins/react-native-firebase-perf-tracer.git",
+	"homepage": "https://github.com/Zenklub/react-native-firebase-perf-tracer#readme",
+	"repository": "git+https://github.com/Zenklub/react-native-firebase-perf-tracer.git",
 	"bugs": {
-		"url": "https://github.com/erick-martins/react-native-firebase-perf-tracer/issues"
+		"url": "https://github.com/Zenklub/react-native-firebase-perf-tracer/issues"
 	},
 	"scripts": {
 		"clean": "rimraf ./dist",
